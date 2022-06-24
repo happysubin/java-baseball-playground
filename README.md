@@ -24,3 +24,5 @@ git checkout main // 기본 브랜치가 main인 경우
 git checkout -b 브랜치이름
 ex) git checkout -b apply-feedback
 ```
+
+숫자야구에서 무조건 한 메서드에 오직 한 단계의 들여쓰기만 허용, else 예약어를 사용하지 않는다.
