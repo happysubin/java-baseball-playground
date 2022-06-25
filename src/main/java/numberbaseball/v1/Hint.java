@@ -1,4 +1,4 @@
-package happysubin.javapractice.zoomstudy.numberbaseball.v2;
+package numberbaseball.v1;
 
 public class Hint {
     private String message;
@@ -14,9 +14,8 @@ public class Hint {
         if(ballCount == 0 & strikeCount == 0){
             return new Hint("OUT");
         }
-        else{
-            return new Hint(strikeCount + " strike " + ballCount + " ball");
-        }
+
+        return new Hint(strikeCount + " strike " + ballCount + " ball");
     }
 
     public String getMessage() {
