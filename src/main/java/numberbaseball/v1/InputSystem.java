@@ -1,6 +1,7 @@
-package happysubin.javapractice.zoomstudy.numberbaseball.v2;
+package numberbaseball.v1;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class InputSystem {
     public void receiveAnswer(ArrayList<Integer> attemptedAnswer){
@@ -19,9 +20,7 @@ public class InputSystem {
         System.out.println("게임을 계속하시려면 2을 입력하세요.");
 
         int inputNumber = scanner.nextInt();
-
         return inputNumber;
     }
 
-    //게임을 재시작할 것인지, 종료할 것인지 값을 받는다.
 }
