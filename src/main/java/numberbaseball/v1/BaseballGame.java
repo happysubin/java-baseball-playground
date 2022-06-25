@@ -1,4 +1,4 @@
-package happysubin.javapractice.zoomstudy.numberbaseball.v2;
+package numberbaseball.v1;
 
 import java.util.ArrayList;
 
@@ -29,13 +29,16 @@ public class BaseballGame {
 
         System.out.println(hint.getMessage());
 
-        //개인의 의사 결정
-        if(player.choiceGamerStartOrStop() == 1){
+        int decision = player.choiceGamerReStartOrStop();
+
+        if(decision == 1){
             finishGame();
         }
-        else{
+        else if(decision == 2){
             restartGame();
         }
+
+        throw new RuntimeException("1과 2중에서 입력하세요.");
     }
 
     public void restartGame(){
@@ -45,7 +48,4 @@ public class BaseballGame {
     public void finishGame(){
         System.out.println("게임을 종료합니다");
     }
-
-
-
 }
