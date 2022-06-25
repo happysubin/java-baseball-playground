@@ -16,7 +16,7 @@ public class Computer {
         return answer;
     }
 
-    public void addAnswer(int[] numbers, List<Integer> answer,int num){
+    private void addAnswer(int[] numbers, List<Integer> answer,int num){
         Random random = new Random();
         int temp = random.nextInt(numbers.length);
         if(numbers[temp] != -1){
