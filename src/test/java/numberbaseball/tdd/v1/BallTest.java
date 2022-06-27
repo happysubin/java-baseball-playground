@@ -10,7 +10,5 @@ public class BallTest {
     void strikeTest(){
         Ball ball = new Ball(1, 2);
         BallStatus status = ball.play();
-
-
     }
 }
