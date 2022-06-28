@@ -30,4 +30,13 @@ public class Ball {
         }
         return false;
     }
+
+
+    @Override
+    public String toString() {
+        return "Ball{" +
+                "number=" + number +
+                ", position=" + position +
+                '}';
+    }
 }

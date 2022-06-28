@@ -24,7 +24,7 @@ public class BallTest {
         Ball answer = new Ball(1,3);
         BallStatus status = ball.play(answer);
 
-        //스트라이크인지 검증
+        //볼인지 검증
         Assertions.assertThat(status).isEqualTo(BallStatus.BALL);
     }
 
@@ -35,7 +35,7 @@ public class BallTest {
         Ball answer = new Ball(1,3);
         BallStatus status = ball.play(answer);
 
-        //스트라이크인지 검증
+        //아웃인지 검증
         Assertions.assertThat(status).isEqualTo(BallStatus.OUT);
     }
 }

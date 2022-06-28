@@ -20,8 +20,6 @@ public class ValidationUtilsTest {
         assertThat(ValidationUtils.validateRange(10)).isFalse();
     }
 
-    //TODO
-    //중복 값이 없도록 테스트
     @Test
     @DisplayName("중복 되는 숫자가 있는지 체크")
     void validateDuplicatedTest(){
@@ -30,9 +28,13 @@ public class ValidationUtilsTest {
         assertThat(ValidationUtils.validateDuplicate(3, 3, 3)).isFalse();
     }
 
-    //TODO
-    //3자리인지 체크
-
+    @Test
+    @DisplayName("3자리 수인지 체크")
+    void validatePositionTest(){
+        assertThat(ValidationUtils.validatePosition(1, 2, 3)).isTrue();
+        assertThat(ValidationUtils.validatePosition(3, 2, 3)).isFalse();
+        assertThat(ValidationUtils.validatePosition(3, 3, 3)).isFalse();
+    }
 
 
 }
