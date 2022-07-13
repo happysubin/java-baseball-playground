@@ -24,4 +24,13 @@ public class Balls {
     public List<Ball> getBalls() {
         return balls;
     }
+
+    public BallStatus play(Ball attemptBall) {
+        return balls.stream()
+                .map(ball -> ball.play(attemptBall))
+                .filter(ballStatus -> ballStatus != BallStatus.OUT)
+                .findFirst()
+                .orElse(BallStatus.OUT);
+
+    }
 }

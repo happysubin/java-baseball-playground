@@ -16,20 +16,20 @@ public class BallTest {
     void strikeTest() {
         Ball ball = new Ball(1, 3);
         Ball ball2 = new Ball(1, 3);
-        Assertions.assertThat(ball.makeBallStatus(ball2)).isEqualTo(BallStatus.STRIKE);
+        Assertions.assertThat(ball.play(ball2)).isEqualTo(BallStatus.STRIKE);
     }
 
     @Test
     void ballTest() {
         Ball ball = new Ball(1, 2);
         Ball ball2 = new Ball(1, 3);
-        Assertions.assertThat(ball.makeBallStatus(ball2)).isEqualTo(BallStatus.BALL);
+        Assertions.assertThat(ball.play(ball2)).isEqualTo(BallStatus.BALL);
     }
 
     @Test
     void outTest() {
         Ball ball = new Ball(2, 2);
         Ball ball2 = new Ball(1, 3);
-        Assertions.assertThat(ball.makeBallStatus(ball2)).isEqualTo(BallStatus.OUT);
+        Assertions.assertThat(ball.play(ball2)).isEqualTo(BallStatus.OUT);
     }
 }
