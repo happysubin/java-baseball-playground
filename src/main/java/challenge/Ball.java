@@ -10,12 +10,23 @@ public class Ball {
         this.position = position;
     }
 
+    public BallStatus makeBallStatus(Ball ball){
+        if(ball.strike(value, position)){
+            return BallStatus.STRIKE;
+        }
 
-    public int getValue() {
-        return value;
+        else if(ball.ball(value)){
+            return BallStatus.BALL;
+        }
+
+        return BallStatus.OUT;
     }
 
-    public int getPosition() {
-        return position;
+    public boolean strike(int value, int position ){
+        return (this.value == value & this.position == position );
+    }
+
+    public boolean ball(int value){
+        return this.value == value;
     }
 }
