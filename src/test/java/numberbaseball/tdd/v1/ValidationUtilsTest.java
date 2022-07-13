@@ -34,6 +34,7 @@ public class ValidationUtilsTest {
         assertThat(ValidationUtils.validatePosition(1, 2, 3)).isTrue();
         assertThat(ValidationUtils.validatePosition(3, 2, 3)).isFalse();
         assertThat(ValidationUtils.validatePosition(3, 3, 3)).isFalse();
+
     }
 
 

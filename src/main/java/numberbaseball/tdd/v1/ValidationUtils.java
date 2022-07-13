@@ -15,6 +15,5 @@ public class ValidationUtils {
 
     public static boolean validatePosition(int i, int i1, int i2) {
         return true;
-
     }
 }
