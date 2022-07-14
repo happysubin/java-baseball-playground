@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Balls {
 
-    List<Ball> balls;
+    private List<Ball> balls;
 
     public Balls(List<Integer> numbers) {
         this.balls = makeBalls(numbers);
