@@ -1,6 +1,5 @@
 package challenge;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -19,8 +18,8 @@ public class NumberBaseballGameTest {
         //when
         NumberBaseballGame game = new NumberBaseballGame(){
             @Override
-            public List<Integer> getRandomList() {
-                return Arrays.asList(1, 2, 3);
+            public Balls makeAnswer() {
+                return new Balls(Arrays.asList(1, 2, 3));
             }
         };
         Balls answer = game.getAnswer();
@@ -42,5 +41,62 @@ public class NumberBaseballGameTest {
         //then
         Balls answer = game.getAnswer();
         assertThat(answer.getBalls().size()).isEqualTo(3);
+    }
+
+    @Test
+    @DisplayName("숫자야구 정답 테스트")
+    void answerSuccessTest() {
+        //given
+        NumberBaseballGame game = new NumberBaseballGame(){
+            @Override
+            public Balls makeAnswer() {
+                return new Balls(Arrays.asList(1, 2, 3));
+            }
+        };
+
+        //when
+        Balls attemptedAnswer = new Balls(Arrays.asList(1, 2, 3));
+
+        //then
+        String result = game.playBaseBall(game.getAnswer(), attemptedAnswer);
+        assertThat(result).isEqualTo("Answer");
+    }
+
+    @Test
+    @DisplayName("숫자야구 OUT 테스트")
+    void OutSuccessTest() {
+        //given
+        NumberBaseballGame game = new NumberBaseballGame(){
+            @Override
+            public Balls makeAnswer() {
+                return new Balls(Arrays.asList(4, 5, 7));
+            }
+        };
+
+        //when
+        Balls attemptedAnswer = new Balls(Arrays.asList(1, 2, 3));
+
+        //then
+        String result = game.playBaseBall(game.getAnswer(), attemptedAnswer);
+        assertThat(result).isEqualTo("Out");
+    }
+
+    @Test
+    @DisplayName("숫자야구 Strike, ball 테스트")
+    void StrikeAndBallSuccessTest() {
+        //given
+        NumberBaseballGame game = new NumberBaseballGame(){
+            @Override
+            public Balls makeAnswer() {
+                return new Balls(Arrays.asList(1, 2, 4));
+            }
+        };
+
+        //when
+        Balls attemptedAnswer = new Balls(Arrays.asList(1, 2, 3));
+
+        //then
+        String result = game.playBaseBall(game.getAnswer(), attemptedAnswer);
+        assertThat(result).isEqualTo("2 Strike 0 Ball");
     }
 }
