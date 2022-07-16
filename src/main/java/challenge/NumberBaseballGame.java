@@ -8,6 +8,9 @@ public class NumberBaseballGame {
 
     private Balls answer;
 
+    private static final String END_COMMENT = "정답. 게임을 종료합니다.";
+    private static final String ANSWER = "Answer";
+
     public NumberBaseballGame() {
         this.answer = makeAnswer();
     }
@@ -36,9 +39,9 @@ public class NumberBaseballGame {
             Balls attemptedAnswer = new Balls(InputView.getBalls());
             result = playBaseBall(answer, attemptedAnswer);
             System.out.println(result);
-        } while(!result.equals("Answer"));
+        } while(!result.equals(ANSWER));
 
-        System.out.println("정답. 게임을 종료합니다.");
+        System.out.println(END_COMMENT);
     }
 
     public String playBaseBall(Balls answer, Balls attemptedAnswer){
